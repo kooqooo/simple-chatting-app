@@ -1,7 +1,7 @@
 import streamlit as st
+from openai import OpenAI
 
-from config import openai
-
+openai = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 def write_message(message: dict[str, str]):
     with st.chat_message(message["role"]):
